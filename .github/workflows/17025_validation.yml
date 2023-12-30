@@ -19,7 +19,6 @@ jobs:
       uses: actions/checkout@v4
     - name: Install JadX
       run: ./gradlew dist
-      working-directory: jadx
     - name: Get reference material
       run: wget https://d.apkpure.com/b/APK/com.cellcrypt.nextgen?versionCode=400720004 -O cc.apk
     - name: Verify performance Test 1
