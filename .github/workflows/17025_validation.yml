@@ -22,7 +22,7 @@ jobs:
     - name: Test 1 - Decompile reference material APK
       run: |
             mkdir out
-            jadx "refmat/Cellcrypt Enterprise_4.72.4_Apkpure.apk" -d out
+            ./build/jadx/bin/jadx "refmat/Cellcrypt Enterprise_4.72.4_Apkpure.apk" -d out
       #TODO: add a test to make sure decompile worked. Maybe perform a search
       #      per the CC for certain parameters?
       
