@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - 'main'
+      - 'master'
   schedule:
     #run every Monday at 0200 AEST/0100 AEDST or on update to repository
     - cron:  '0 15 * * 1'
