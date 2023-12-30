@@ -21,6 +21,7 @@ jobs:
       run: ./gradlew dist
     - name: Verify performance Test 1
       run: |
-            jadx -d out "Cellcrypt Enterprise_4.72.4_Apkpure.apk"
+            mdir out
+            jadx "refmat/Cellcrypt Enterprise_4.72.4_Apkpure.apk" -d out
       #TODO: add a test ti make sure decompile worked
       
