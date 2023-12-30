@@ -1,0 +1,29 @@
+# ISO 17025 Verification
+# The aim of this workflow is to coninually test and assess the repository
+# against reference material where possible
+name: 17025 Validation
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+  schedule:
+    #run every Monday at 0200 AEST/0100 AEDST or on update to repository
+    - cron:  '0 15 * * 1'
+
+jobs:
+  install-jadx:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout JadX
+      uses: actions/checkout@v4
+    - name: Install JadX
+      run: ./gradlew dist
+      working-directory: jadx
+    - name: Get reference material
+      run: wget https://d.apkpure.com/b/APK/com.cellcrypt.nextgen?versionCode=400720004 -O cc.apk
+    - name: Verify performance Test 1
+      run: |
+            jadx -d out cc.apk
+      #TODO: add a test ti make sure decompile worked
+      
