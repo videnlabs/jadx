@@ -19,10 +19,8 @@ jobs:
       uses: actions/checkout@v4
     - name: Install JadX
       run: ./gradlew dist
-    - name: Get reference material
-      run: wget https://d.apkpure.com/b/APK/com.cellcrypt.nextgen?versionCode=400720004 -O cc.apk
     - name: Verify performance Test 1
       run: |
-            jadx -d out cc.apk
+            jadx -d out "Cellcrypt Enterprise_4.72.4_Apkpure.apk"
       #TODO: add a test ti make sure decompile worked
       
